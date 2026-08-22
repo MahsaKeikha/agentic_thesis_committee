@@ -1,17 +1,32 @@
-# Agentic Thesis Committee
+# F99 | Agentic Thesis Committee | L3 Gold Standard | v1.0
 
-F99 in the Agentic AI Library. Standalone multi agent education system for thesis review, methodology critique, evidence assessment, contribution analysis, and committee decision support.
+A governed multi-agent reference system for thesis and dissertation committee support, including research-question review, methodology critique, evidence examination, contribution assessment, research-integrity review, and committee preparation.
 
-## Agents
+## Five-agent architecture
 
-- [Research Question Agent](AGENTS/research_question_agent.py)
-- [Methodology Critic](AGENTS/methodology_critic_agent.py)
-- [Evidence Examiner](AGENTS/evidence_examiner_agent.py)
-- [Contribution Reviewer](AGENTS/contribution_reviewer_agent.py)
-- [Committee Chair Agent](AGENTS/committee_chair_agent.py)
+- Research Question Agent
+- Methodology Critic
+- Evidence Examiner
+- Contribution Reviewer
+- Committee Chair Agent
 
-## Structure
+## Gold-standard academic governance
 
-[Tools](TOOLS) | [Skills](SKILLS) | [Orchestration](orchestration) | [Memory](memory) | [State](state) | [Schemas](schemas) | [Prompts](prompts) | [Config](config) | [Safety](safety) | [Observability](observability) | [Evaluations](evals) | [Benchmarks](benchmarks) | [Examples](examples) | [Tests](tests) | [Architecture](docs/ARCHITECTURE.md)
+F99 is fail closed and advisory only. Committee-support release requires reviewed research questions, methodology, evidence, contribution claims, research integrity, conflicts of interest, due process, and explicit qualified-human committee approval.
 
-The system supports committee preparation and review. Final academic judgments remain with authorized faculty.
+Release is blocked for unclear research scope, unresolved methodological-validity gaps, incomplete evidence provenance, unsupported originality or contribution claims, research-integrity concerns, unresolved committee conflicts of interest, due-process gaps, or unresolved conflicting evidence.
+
+The reference system cannot autonomously make a thesis or defense decision, recommend a degree, make an academic-integrity finding, change student records, or submit externally. Final academic judgments remain solely with authorized faculty and the institution.
+
+## Verification gates
+
+CI runs on Python 3.10, 3.11, and 3.12 and requires:
+
+```bash
+ruff check . --select E9,F63,F7,F82
+python -m pytest -q
+python evals/held_out.py
+python run.py
+```
+
+The behavioral verification layer includes eight direct governance tests and a 10-scenario held-out thesis-governance suite.
